@@ -22,9 +22,23 @@ namespace oroklodes
 		{
             Console.WriteLine($"{Nev} felvéve, {Sebzes}HP-t sebez.");
         }
-		public void Harcol(string Nev1, string Nev2)
+		public static void Harcol(Karakter k1, Karakter k2)
 		{
-
+			int k1Pont = k1.Elet + k1.Sebzes;
+			int k2Pont = k2.Elet + k2.Sebzes;
+            Console.WriteLine($"Harcol: {k1.Nev} vs {k2.Nev}");
+            if (k1Pont > k2Pont)
+			{
+				Console.WriteLine($"{k1.Nev} győzött!");
+			}
+			else if (k1Pont < k2Pont)
+			{
+				Console.WriteLine($"{k2.Nev} győzött!");
+			}
+			else
+			{
+				Console.WriteLine("Döntetlen!");
+			}
 		}
 	}
 }
